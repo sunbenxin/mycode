@@ -1,0 +1,58 @@
+#! /bin/bash
+
+cd /opt/yes/source/openresty
+/usr/local/openresty/nginx/sbin/nginx -p . -c conf/yes.conf -s stop
+hostn=`hostname | awk -F '.' '{print $1}'`
+sed -i 's/machineId = "machineId"/machineId = "'$hostn'"/g' src/lua/exchange/exchangeConf.lua
+sed -i 's/echo "nginx is ok";/#echo "nginx is ok";/g' conf/yes-video.conf
+/usr/local/openresty/nginx/sbin/nginx -p . -c conf/yes.conf 
+
+http_code=`curl -I -s 'http://127.0.0.1:8082/init' -w %{http_code}`
+if [ ${http_code:9:3} = '200' ]
+then
+    echo "ip Success!"
+else
+    echo "ip Fail!"
+fi
+
+http_code=`curl -I -s 'http://127.0.0.1:8082/get-materials' -w %{http_code}`
+if [ ${http_code:9:3} = '200' ]
+then
+    echo "get-materials Success!"
+else
+    echo "get-materials Fail!"
+fi
+
+http_code=`curl -I -s 'http://127.0.0.1:8082/get-videos-category' -w %{http_code}`
+if [ ${http_code:9:3} = '200' ]
+then
+    echo "get-videos-category Success!"
+else
+    echo "get-videos-category Fail!"
+fi
+
+http_code=`curl -I -s 'http://127.0.0.1:8082/syn-tables' -w %{http_code}`
+if [ ${http_code:9:3} = '200' ]
+then
+    echo "syn-tables Success!"
+else
+    echo "syn-tables Fail!"
+fi
+
+http_code=`curl -I -s 'http://127.0.0.1:8082/heartbeat' -w %{http_code}`
+if [ ${http_code:9:3} = '200' ]
+then
+    echo "heartbeat Success!"
+else
+    echo "heartbeat Fail!"
+fi
+#curl 'http://127.0.0.1:8082/init-budget'
+http_code=`curl -I -s 'http://127.0.0.1:8082/init-budget' -w %{http_code}`
+if [ ${http_code:9:3} = '200' ]
+then
+    echo "budget Success!"
+else
+    echo "budget Fail!"
+fi
+sed -i 's/#echo "nginx is ok";/echo "nginx is ok";/g' conf/yes-video.conf
+/usr/local/openresty/nginx/sbin/nginx -p . -c conf/yes.conf -s reload

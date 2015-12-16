@@ -1,0 +1,40 @@
+#! /bin/bash
+./patch.sh
+./startRedis.sh
+cd /opt/adx/source/center
+mkdir -p logs
+#to differentiate ssp server and center control server by conf file
+/usr/local/openresty/nginx/sbin/nginx -p . -c ../center/conf/nginx.conf -s stop
+/usr/local/openresty/nginx/sbin/nginx -p . -c ../center/conf/nginx.conf 
+
+#http_code=`curl -I -s 'http://127.0.0.1/init' -w %{http_code}`
+#if [ ${http_code:9:3} = '200' ]
+#then
+#    echo "ip Success!"
+#else
+#    echo "ip Fail!"
+#fi
+
+http_code=`curl -I -s 'http://127.0.0.1:8080/update-all' -w %{http_code}`
+if [ ${http_code:9:3} = '200' ]
+then
+    echo "update-all Success!"
+else
+    echo "update-all Fail!"
+fi
+
+http_code=`curl -I -s 'http://127.0.0.1:8080/syn-tables' -w %{http_code}`
+if [ ${http_code:9:3} = '200' ]
+then
+    echo "syn-tables Success!"
+else
+    echo "syn-tables Fail!"
+fi
+
+http_code=`curl -I -s 'http://127.0.0.1:8080/init-budget' -w %{http_code}`
+if [ ${http_code:9:3} = '200' ]
+then
+    echo "budget Success!"
+else
+    echo "budget Fail!"
+fi

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+curl -i -d '{"id":"machineId-04i_-01mR0t-027-21k","app":{"content":{"keywords":"...............","title":"............... 26","ext":{"channel":"d","usr":"62583473","cs":"2038","vid":"344805839","s":"301772"}},"name":"..............."},"device":{"ua":"Youku;4.6.1;Android;4.2.2;vivo Y11iW","ip":"222.241.7.106","devicetype":0,"didmd5":"a4e06caedd7403efa2b8888c4034af88","os":"Android","osv":"4.2.2"},"imp":[{"bidfloor":1040,"id":"05662958852cda8cc28fb2beda1848ab","ext":{"repeat":2},"video":{"h":480,"w":640,"mimes":["video/x-flv","video/mp4","text/html"],"minduration":13,"linearity":1,"maxduration":78},"tagid":"56"}],"user":{"id":"864731022557693"}}' ''
