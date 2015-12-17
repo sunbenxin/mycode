@@ -1,52 +1,71 @@
 {
-    "BAK": [
-        {}
-    ], 
-    "MC": 1, 
-    "ML": 79, 
-    "P": 7, 
-    "PT": 3, 
-    "PTT": 0, 
-    "SKIP": 1, 
+    "BAK": [],
+    "MC": 2,
+    "ML": 36,
+    "P": 7,
+    "PS": 0,
+    "PT": 4,
+    "PTT": 0,
+    "SKIP": 1,
     "VAL": [
         {
-            "AL": 15, 
-            "AT": 70, 
-            "BRS": "", 
-            "CU": "http://val.atm.youku.com/click?v=55351642&pp=7&ct=d&cs=2039&ca=916134&ie=642272&uid=38590191&ck=5066B29B-3B6B-4F12-B468-B10AB805C478&al=15&bl=1&s=15172&td=&st=1&vl=2672.52&ap=!adPosition!&sid=69c1cedc66ca419b7cc52ad8a622fc33&cr=1&tvb=0&pr=37&oidtype=91650%7C0&dq=mp4%7Cmp4&uri=-1&dc=2019731&ext=&pc=!price!&dspid=0&hyid=&ps=0&ca0=916134&eff=1&adsid=144437473352247156198&bd=apple&mdl=iPad5%2C3&ip=101.228.129.23&tp=2&advid=335960206&mb=1&os=0&dt=0&avs=3.9.8&aw=a&vc=1&idfa=5066B29B-3B6B-4F12-B468-B10AB805C478&ouid=82338bbe0a94a60d34b1b432a104dd415341cee1&mac=02:00:00:00:00:00&im=&aid=&guid=7066707c5bdc38af1621eaf94a6fe779&u=http://yktd.m.cn.miaozhen.com/r/kequal_esc2012481and_escpequal_esc6wjM3and_escdxequal_esc0and_escniequal_esc__IESID__and_escmoequal_esc1and_escnsequal_esc101.228.129.23and_escm0equal_esc82338bbe0a94a60d34b1b432a104dd415341cee1and_escm0aequal_esc__DUID__and_escm1equal_esc__ANDROIDID1__and_escm1aequal_escand_escm2equal_escand_escm4equal_esc__AAID__and_escm5equal_esc5066B29B-3B6B-4F12-B468-B10AB805C478and_escm6equal_esc__MAC1__and_escm6aequal_esc0f607264fc6318a92b9e13c65db7cd3cand_escndequal_esc__DRA__and_escnpequal_esc__POS__and_escnnequal_esc__APP__and_escoequal_eschttp://sale.jd.com/m/act/jA2a0N6EOfygDkM4.html&md5=e3e3b60645aa91e1ed127c671647e5db", 
-            "CUF": 1, 
-            "FU": "revertdc?ca=916134&ie=642272&dc=2019731", 
-            "IE": "642272", 
-            "MN": 0, 
-            "NB": 0, 
-            "PC": 3629, 
-            "PD": 0, 
-            "PR": 3, 
-            "PRV": 0, 
-            "PST": 2, 
-            "RS": "http://k.youku.com/player/getFlvPath/sid/144437234783618367016_00/st/mp4/fileid/03000801005603A5420384003E8803737C25CD-170F-A1C8-94E9-9D52A30FBE69?K=ad1ac2427c1dcbad282adab5&hd=1&myp=0&ts=370&ypp=0&ctype=10&ev=1&token=1155&oip=2130706433&ep=6gd2NbasucFic239G7KJ1dMTONq73SvED9deoXVaAnuYovf34dFVpehIF0YLYOGF5jgYl4BdQPuSz9eYLz4MF2WrYoIYVboVmLzc%2BiiMIRUJ%2B9%2B9gts6q9mYYHI0iI0n1qLq308R7MOC9U%3D", 
-            "RST": "video", 
-            "SDKID": 0, 
-            "SU": [], 
+            "AL": 5,
+            "AT": 76,
+            "BRS": "",
+            "CU": "http://dlied5.myapp.com/myapp/1104512706/cf/100001475_cf-v25-v1_0_3_0-28-2015-11-27-22-48_p.apk",
+            "CUF": 1,
+            "CUM": [
+                {
+                    "SDK": "1",
+                    "U": "http://yktd.m.cn.miaozhen.com/r/k=2015199&p=6yntV&dx=0&ni=__IESID__&mo=0&ns=183.204.243.88&m0=&m0a=__DUID__&m1=__ANDROIDID1__&m1a=efc0e6552bf665fd04d061ce5f5e3ff3&m2=bb18e10341766ca60bb332d662bec3d3&m4=__AAID__&m5=&m6=__MAC1__&m6a=fa0825ec127e6880b7dde41646e74252&nd=__DRA__&np=__POS__&nn=__APP__&o="
+                },
+                {
+                    "SDK": "0",
+                    "U": "http://val.atm.youku.com/click?v=313147147&pp=7&ct=u&cs=2146&ca=1004231&ie=673855&uid=435166774&ck=867822020245105&al=5&bl=1&s=&td=&st=1&vl=418.6&ap=!adPosition!&sid=efc44a53bfde9faf42266e65e7aeba94&cr=0&pr=213&oidtype=94836%7C0&dq=&uri=-1&dc=2419510&bak=&pc=!price!&hyid=&ps=0&eff=1&adsid=145015178353043184172&bd=Xiaomi&mdl=HM+NOTE+1S&tag=&ip=183.204.243.88&tp=2&prp=30&mb=1&os=1&dt=1&avs=5.3.1&aw=a&vc=0&idfa=&ouid=&mac=9C:99:A0:FE:1E:A2&im=867822020245105&aid=8e1fd81c8b4e20d1&guid=fb2992d7acb3ec340927fe600af35839"
+                }
+            ],
+            "CUU": "",
+            "H": 480,
+            "IE": "673855",
+            "MN": 1,
+            "NB": 0,
+            "PC": 0,
+            "PD": 1,
+            "PR": 3,
+            "PRV": 0,
+            "PST": 310,
+            "RK": 4496,
+            "RS": "http://static.atm.youku.com/idea/201512/1211/94836/854480.jpg",
+            "RST": "img",
+            "SDKID": 0,
+            "SHU": [],
+            "SU": [],
             "SUE": [
                 {
-                    "SDK": "0", 
-                    "U": "http://val.atm.youku.com/over?v=55351642&pp=7&ct=d&cs=2039&ca=916134&ie=642272&uid=38590191&ck=5066B29B-3B6B-4F12-B468-B10AB805C478&al=15&bl=1&s=15172&td=&st=1&vl=2672.52&ap=!adPosition!&sid=69c1cedc66ca419b7cc52ad8a622fc33&cr=1&tvb=0&pr=37&oidtype=91650%7C0&dq=mp4%7Cmp4&uri=-1&dc=2019731&ext=&pc=!price!&dspid=0&hyid=&ps=0&ca0=916134&eff=1&adsid=144437473352247156198&bd=apple&mdl=iPad5%2C3&ip=101.228.129.23&tp=2&advid=335960206&mb=1&os=0&dt=0&avs=3.9.8&aw=a&vc=1&idfa=5066B29B-3B6B-4F12-B468-B10AB805C478&ouid=82338bbe0a94a60d34b1b432a104dd415341cee1&mac=02:00:00:00:00:00&im=&aid=&guid=7066707c5bdc38af1621eaf94a6fe779"
+                    "SDK": "0",
+                    "U": "http://val.atm.youku.com/over?v=313147147&pp=7&ct=u&cs=2146&ca=1004231&ie=673855&uid=435166774&ck=867822020245105&al=5&bl=1&s=&td=&st=1&vl=418.6&ap=!adPosition!&sid=efc44a53bfde9faf42266e65e7aeba94&cr=0&pr=213&oidtype=94836%7C0&dq=&uri=-1&dc=2419510&bak=&pc=!price!&hyid=&ps=0&eff=1&adsid=145015178353043184172&bd=Xiaomi&mdl=HM+NOTE+1S&tag=&ip=183.204.243.88&tp=2&prp=30&mb=1&os=1&dt=1&avs=5.3.1&aw=a&vc=0&idfa=&ouid=&mac=9C:99:A0:FE:1E:A2&im=867822020245105&aid=8e1fd81c8b4e20d1&guid=fb2992d7acb3ec340927fe600af35839"
                 }
-            ], 
+            ],
+            "SUP": [],
+            "SUR": [],
             "SUS": [
                 {
-                    "SDK": "0", 
-                    "U": "http://val.atm.youku.com/show?v=55351642&pp=7&ct=d&cs=2039&ca=916134&ie=642272&uid=38590191&ck=5066B29B-3B6B-4F12-B468-B10AB805C478&al=15&bl=1&s=15172&td=&st=1&vl=2672.52&ap=!adPosition!&sid=69c1cedc66ca419b7cc52ad8a622fc33&cr=1&tvb=0&pr=37&oidtype=91650%7C0&dq=mp4%7Cmp4&uri=-1&dc=2019731&ext=&pc=!price!&dspid=0&hyid=&ps=0&ca0=916134&eff=1&adsid=144437473352247156198&bd=apple&mdl=iPad5%2C3&ip=101.228.129.23&tp=2&advid=335960206&mb=1&os=0&dt=0&avs=3.9.8&aw=a&vc=1&idfa=5066B29B-3B6B-4F12-B468-B10AB805C478&ouid=82338bbe0a94a60d34b1b432a104dd415341cee1&mac=02:00:00:00:00:00&im=&aid=&guid=7066707c5bdc38af1621eaf94a6fe779"
-                }, 
+                    "SDK": "0",
+                    "U": "http://val.atm.youku.com/show?v=313147147&pp=7&ct=u&cs=2146&ca=1004231&ie=673855&uid=435166774&ck=867822020245105&al=5&bl=1&s=&td=&st=1&vl=418.6&ap=!adPosition!&sid=efc44a53bfde9faf42266e65e7aeba94&cr=0&pr=213&oidtype=94836%7C0&dq=&uri=-1&dc=2419510&bak=&pc=!price!&hyid=&ps=0&eff=1&adsid=145015178353043184172&bd=Xiaomi&mdl=HM+NOTE+1S&tag=&ip=183.204.243.88&tp=2&prp=30&mb=1&os=1&dt=1&avs=5.3.1&aw=a&vc=0&idfa=&ouid=&mac=9C:99:A0:FE:1E:A2&im=867822020245105&aid=8e1fd81c8b4e20d1&guid=fb2992d7acb3ec340927fe600af35839"
+                },
                 {
-                    "SDK": "0", 
-                    "U": "http://yktd.m.cn.miaozhen.com/x/k=2012481&p=6wjM3&dx=0&ni=__IESID__&mo=1&ns=101.228.129.23&m0=82338bbe0a94a60d34b1b432a104dd415341cee1&m0a=__DUID__&m1=__ANDROIDID1__&m1a=&m2=&m4=__AAID__&m5=5066B29B-3B6B-4F12-B468-B10AB805C478&m6=__MAC1__&m6a=0f607264fc6318a92b9e13c65db7cd3c&rt=2&nd=__DRA__&np=__POS__&nn=__APP__&o="
+                    "SDK": "1",
+                    "U": "http://yktd.m.cn.miaozhen.com/x/k=2015199&p=6yntV&dx=0&ni=__IESID__&mo=0&ns=183.204.243.88&m0=&m0a=__DUID__&m1=__ANDROIDID1__&m1a=efc0e6552bf665fd04d061ce5f5e3ff3&m2=bb18e10341766ca60bb332d662bec3d3&m4=__AAID__&m5=&m6=__MAC1__&m6a=fa0825ec127e6880b7dde41646e74252&rt=2&nd=__DRA__&np=__POS__&nn=__APP__&o="
                 }
-            ], 
-            "VID": "335960206", 
-            "VQT": "mp4", 
+            ],
+            "VC": "",
+            "VN": "",
+            "VP": 0,
+            "VSC": "",
+            "VT": 0,
+            "W": 854,
             "ZR": 0
         }
-    ]
+    ],
+    "VER": "3.0"
 }
