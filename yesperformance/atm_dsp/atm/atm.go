@@ -55,23 +55,26 @@ type O_atm_rsp_sus struct {
 	U   string
 }
 
+var buf = make([]byte, 30000)
+var count int
+
 func DspServe(w http.ResponseWriter, r *http.Request) {
 	var response atm_rsp
-	err1 := json.Unmarshal(buf[:count], &response)
-	if err1 != nil {
-		log.Fatal(err1)
+	err := json.Unmarshal(buf[:count], &response)
+	if err != nil {
+		log.Fatal(err)
 	}
 
-	output, err1 := json.Marshal(response)
-	if err1 != nil {
-		fmt.Println(err1)
+	output, err := json.Marshal(response)
+	if err != nil {
+		fmt.Println(err)
 	}
 
 	io.WriteString(w, string(output))
 }
 
-func readFile(fileName string) (buf []byte, count int) {
-	file, err := os.Open(fileName)
+func Init() int {
+	file, err := os.Open("atmResp.json")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -80,13 +83,11 @@ func readFile(fileName string) (buf []byte, count int) {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-	return buf, count
+	return count
 }
 
 func main() {
-	readFile("atmResp.json")
-	buf, count := readFile("atmRest.json")
+	count = Init()
 	http.HandleFunc("/adv", DspServe)
-	http.ListenAndServe(":9000", nil)
+	http.ListenAndServe(":9090", nil)
 }
