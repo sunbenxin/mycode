@@ -1,15 +1,18 @@
 #!/bin/bash
 
-go build dsp1.go
-go build dsp2.go
-go build dsp3.go
-go build dsp4.go
+cd bin
+go build ./../src/dsp1.go
+go build ./../src/dsp2.go
+go build ./../src/dsp3.go
+go build ./../src/dsp4.go
 
 pkill dsp
+
 sleep 3
-./dsp1&
-./dsp2&
-./dsp3&
-./dsp4&
+cd ..
+./bin/dsp1&
+./bin/dsp2&
+./bin/dsp3&
+./bin/dsp4&
 
 ps -ef  | grep dsp
