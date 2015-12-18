@@ -5,7 +5,9 @@ import (
 	"fmt"
 	"io"
 	"io/ioutil"
+	"log"
 	"net/http"
+	"os"
 )
 
 type O_rsp_bid_ext struct {
@@ -96,47 +98,19 @@ type req struct {
 	User   O_user   `json:"user"`
 }
 
-func DspServe(w http.ResponseWriter, r *http.Request) {
-	buf := `{
-    "bidid": "1",
-    "id": "machineId-07q_-01m8F3-0FI-2Ow",
-    "seatbid": [
-        {
-            "bid": [
-                {
-                    "adm": "http://v.youku.com/v_show/id_XMTM2MTI3ODU4NA==.html",
-                    "crid": "crtRpvKpj3c9198a1",
-                    "ext": {
-                        "cm": [
-                            "http://d.dsp.imageter.com/x?tp=16&isp=spcuoN8Ko48f850bf&isa=dspahuwyB47a769cb_crtRpvKpj3c9198a1_"
-                        ],
-                        "ldp": "http://aw.kejet.net/c?&v=1449740803&d=fv9&c=nj&m=DrC&n=14&ip=60.17.132.220&f=tudouui&ch=9&yc=120090002&y=14S-spcuoN8Ko48f850bf&id=n584442-14-184-5740803801&g=http%3A%2F%2Ftg.51.com%2Fsearch%2Fwangyeyouxi%2Fshequ.htm%3Ff_source%3Dwyh3_368913%26baidu_domain%3D%25YC%25",
-                        "pm": [
-                            "http://d.dsp.imageter.com/youku_not?tp=8&isp=spcuoN8Ko48f850bf&isa=dspahuwyB47a769cb_crtRpvKpj3c9198a1_&price=400&ip:60.17.132.220&cookie:gu=1449714797325DKayouku",
-                            "http://aw.kejet.net/r/imtr/r?d=fv9&i=60.17.132.220&t=1449714797325DKa&f=tudouui&m=DrC&y=14S-spcuoN8Ko48f850bf&v=1449740803&p=400&ch=9&yc=120090002&id=n584442-14-184-5740803801",
-                            "http://aw.kejet.net/u/imtr/m?nvid=1449714797325DKa"
-                        ],
-                        "s": "2672"
-                    },
-                    "id": "1",
-                    "impid": "0193812230543eb798deea8efd0bf63a",
-                    "nurl": "http://aw.kejet.net/r/imtr/r?d=fv9&i=60.17.132.220&t=1449714797325DKa&f=tudouui&m=DrC&y=14S-spcuoN8Ko48f850bf&v=1449740803&p=400&ch=9&yc=120090002&id=n584442-14-184-5740803801",
-                    "price": 400.0
-                }
-            ]
-        }
-    ]
-}`
+var buf = make([]byte, 3000)
+var count int
 
+func DspServe(w http.ResponseWriter, r *http.Request) {
 	var response rsp
-	err := json.Unmarshal([]byte(buf), &response)
+	err := json.Unmarshal(buf[:count], &response)
 	if err != nil {
 		fmt.Println(err)
 	}
 
-	reqBody, err1 := ioutil.ReadAll(r.Body)
-	if err1 != nil {
-		fmt.Println(err1)
+	reqBody, err := ioutil.ReadAll(r.Body)
+	if err != nil {
+		fmt.Println(err)
 	}
 
 	var request req
@@ -156,7 +130,22 @@ func DspServe(w http.ResponseWriter, r *http.Request) {
 	io.WriteString(w, string(output))
 }
 
+func readFile(filename string) int {
+	file, err := os.Open(filename)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	count, err = file.Read(buf)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	return count
+}
+
 func main() {
+	count = readFile("dsp1.json")
 	http.HandleFunc("/dsp1/bid", DspServe)
 	http.ListenAndServe(":9001", nil)
 }
