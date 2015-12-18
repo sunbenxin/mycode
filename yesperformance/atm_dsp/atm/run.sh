@@ -1,6 +1,8 @@
 #!/bin/bash
 
-rm -rf atm
-go build atm.go
+rm -rf bin/atm
+cd bin
+go build ./../src/atm.go
+cd ..
 pkill atm
-./atm&
+./bin/atm&
