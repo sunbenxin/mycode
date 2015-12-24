@@ -1,0 +1,13 @@
+#!/bin/bash
+
+
+if [ $1 -eq 0 ];then
+    ssh video_15 "pkill tcpcopy"
+    ssh video_15 "ps -ef | grep tcpcopy"
+    exit 1
+fi
+ssh video_15 "pkill tcpcopy"
+ssh video_15 "/usr/local/tcpcopy/sbin/tcpcopy  -x 80-10.100.51.159:80 -s 10.100.51.160 -c 192.169.162.x -p 55555   -n $1"&
+sleep 1 &&kill -9 $!
+
+watch -n 2 cat /etc/zenoss/performance

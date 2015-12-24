@@ -58,6 +58,12 @@ type O_atm_rsp_sus struct {
 var buf = make([]byte, 30000)
 var count int
 
+var f *os.File
+
+func RecordLog() {
+	f.WriteString("atm\n")
+}
+
 func DspServe(w http.ResponseWriter, r *http.Request) {
 	var response atm_rsp
 	err := json.Unmarshal(buf[:count], &response)
@@ -72,6 +78,7 @@ func DspServe(w http.ResponseWriter, r *http.Request) {
 		fmt.Println(err)
 	}
 
+	RecordLog()
 	io.WriteString(w, string(output))
 }
 
@@ -89,6 +96,7 @@ func Init() int {
 }
 
 func main() {
+	f, _ = os.Open("/opt/data/yes/openresty/logs/atm.log")
 	count = Init()
 	http.HandleFunc("/adv", DspServe)
 	http.ListenAndServe(":9000", nil)

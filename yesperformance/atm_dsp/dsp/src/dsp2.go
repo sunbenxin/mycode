@@ -17,6 +17,7 @@ type O_rsp_bid_ext struct {
 	Pm  []string `json:"pm"`
 	S   string   `json:"s"`
 	Ldp string   `json:"ldp"`
+	//	Type string   `json:"type"`
 }
 
 type O_rsp_bid struct {

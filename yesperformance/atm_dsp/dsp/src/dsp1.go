@@ -17,6 +17,7 @@ type O_rsp_bid_ext struct {
 	Pm  []string `json:"pm"`
 	S   string   `json:"s"`
 	Ldp string   `json:"ldp"`
+	//	Type string   `json:"type"`
 }
 
 type O_rsp_bid struct {
@@ -104,6 +105,16 @@ var buf = make([]byte, 3000)
 var count int
 var myrand = rand.New(rand.NewSource(time.Now().UnixNano()))
 
+func AccessLog() {
+	file, err := os.Open("/opt/data/yes/openresty/logs/dsp1.log")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	logger := log.New(file, "logger", log.Lshortfile)
+	logger.Print("DSP1")
+}
+
 func DspServe(w http.ResponseWriter, r *http.Request) {
 	var response rsp
 	err := json.Unmarshal(buf[:count], &response)
@@ -134,6 +145,7 @@ func DspServe(w http.ResponseWriter, r *http.Request) {
 		fmt.Println(err3)
 	}
 
+	AccessLog()
 	io.WriteString(w, string(output))
 }
 
@@ -152,6 +164,12 @@ func readFile(filename string) int {
 }
 
 func main() {
+	file, err := os.Create("/opt/data/yes/openresty/logs/dsp1.log")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer file.Close()
+
 	count = readFile("json/dsp1.json")
 	http.HandleFunc("/dsp1/bid", DspServe)
 	http.ListenAndServe(":9001", nil)
