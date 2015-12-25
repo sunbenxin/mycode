@@ -3,9 +3,9 @@ package main
 import (
 	"encoding/json"
 	"flag"
+	log "github.com/cihub/seelog"
 	"io"
 	"io/ioutil"
-	"log"
 	"math/rand"
 	"net/http"
 	"os"
@@ -105,7 +105,12 @@ var buf = make([]byte, 3000)
 var count int
 var myrand = rand.New(rand.NewSource(time.Now().UnixNano()))
 
+var port = flag.String("port", "80", "listen port")
+var path = flag.String("path", "", "request path")
+var bidResFile = flag.String("filename", "", "filename used to bid response")
+
 func DspServe(w http.ResponseWriter, r *http.Request) {
+	log.Info(*path)
 	var response rsp
 	err := json.Unmarshal(buf[:count], &response)
 	if err != nil {
@@ -137,28 +142,32 @@ func DspServe(w http.ResponseWriter, r *http.Request) {
 	if err3 != nil {
 		return
 	}
+
 	io.WriteString(w, string(output))
 }
 
 func readFile(filename string) int {
 	file, err := os.Open(filename)
 	if err != nil {
-		log.Fatal(err)
+		log.Critical(err)
 	}
 
 	count, err = file.Read(buf)
 	if err != nil {
-		log.Fatal(err)
+		log.Critical(err)
 	}
 
 	return count
 }
 
 func main() {
-	port := flag.String("port", "80", "listen port")
-	path := flag.String("path", "", "request path")
-	bidResFile := flag.String("filename", "", "filename used to bid response")
 	flag.Parse()
+	logger, err := log.LoggerFromConfigAsFile("seelog.xml")
+	if err != nil {
+		log.Critical("err parsing config file", err)
+		return
+	}
+	log.ReplaceLogger(logger)
 
 	count = readFile(*bidResFile)
 	http.HandleFunc(*path, DspServe)
