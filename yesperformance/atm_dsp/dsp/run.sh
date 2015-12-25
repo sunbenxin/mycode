@@ -1,18 +1,15 @@
 #!/bin/bash
 
-cd bin
-go build ./../src/dsp1.go
-go build ./../src/dsp2.go
-go build ./../src/dsp3.go
-go build ./../src/dsp4.go
+go build dsp.go
 
 pkill dsp
 
 sleep 3
-cd ..
-./bin/dsp1&
-./bin/dsp2&
-./bin/dsp3&
-./bin/dsp4&
+
+./dsp -filename=bidRes.json -path=/dsp1 -port=9001&
+./dsp -filename=bidRes.json -path=/dsp2 -port=9002&
+./dsp -filename=bidRes.json -path=/dsp3 -port=9003&
+./dsp -filename=bidRes.json -path=/dsp4 -port=9004&
+./dsp -filename=bidRes.json -path=/dsp5 -port=9005&
 
 ps -ef  | grep dsp
