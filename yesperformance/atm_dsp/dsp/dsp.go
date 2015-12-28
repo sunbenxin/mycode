@@ -110,7 +110,7 @@ var path = flag.String("path", "", "request path")
 var bidResFile = flag.String("filename", "", "filename used to bid response")
 
 func DspServe(w http.ResponseWriter, r *http.Request) {
-	log.Info(*path)
+	log.Info(*port)
 	var response rsp
 	err := json.Unmarshal(buf[:count], &response)
 	if err != nil {
