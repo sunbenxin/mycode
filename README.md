@@ -1,2 +1,2 @@
 #codeRepo
-#各种代码收集地
+#My job career all in this repo
