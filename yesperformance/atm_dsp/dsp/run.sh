@@ -1,18 +1,25 @@
 #!/bin/bash
 
-cd bin
-go build ./../src/dsp1.go
-go build ./../src/dsp2.go
-go build ./../src/dsp3.go
-go build ./../src/dsp4.go
+go build dsp.go
 
 pkill dsp
 
 sleep 3
-cd ..
-./bin/dsp1&
-./bin/dsp2&
-./bin/dsp3&
-./bin/dsp4&
+
+./dsp -filename=bidRes.json -path=/bid -port=9001&
+./dsp -filename=bidRes.json -path=/bid -port=9002&
+./dsp -filename=bidRes.json -path=/bid -port=9003&
+./dsp -filename=bidRes.json -path=/bid -port=9004&
+./dsp -filename=bidRes.json -path=/bid -port=9005&
+
+./dsp -filename=bidRes.json -path=/bid -port=10001&
+./dsp -filename=bidRes.json -path=/bid -port=10002&
+./dsp -filename=bidRes.json -path=/bid -port=10003&
+./dsp -filename=bidRes.json -path=/bid -port=10004&
+./dsp -filename=bidRes.json -path=/bid -port=10005&
+./dsp -filename=bidRes.json -path=/bid -port=10006&
+./dsp -filename=bidRes.json -path=/bid -port=10007&
+./dsp -filename=bidRes.json -path=/bid -port=10008&
+./dsp -filename=bidRes.json -path=/bid -port=10009&
 
 ps -ef  | grep dsp
