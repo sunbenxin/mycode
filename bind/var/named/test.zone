@@ -1,0 +1,13 @@
+$TTL 86400 
+@ IN SOA  test.com.  root.test.com. ( 
+10 ; 
+3600 ;
+86400 ;
+2419200 ;
+3600 ) 
+;
+
+ IN NS www.test.com. 
+ IN MX 5 www.test.com. 
+www.test.com. IN A 220.202.19.82 
+

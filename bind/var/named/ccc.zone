@@ -1,0 +1,13 @@
+$TTL 86400 
+@ IN SOA  ccc.com.  root.ccc.com. ( 
+10 ; 
+3600 ;
+86400 ;
+2419200 ;
+3600 ) 
+;
+
+ IN NS www.ccc.com. 
+ IN MX 5 www.ccc.com. 
+www.ccc.com. IN A 10.100.47.63 
+

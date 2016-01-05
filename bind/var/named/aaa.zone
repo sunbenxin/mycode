@@ -1,0 +1,13 @@
+$TTL 86400 
+@ IN SOA  aaa.com.  root.aaa.com. ( 
+10 ; 
+3600 ;
+86400 ;
+2419200 ;
+3600 ) 
+;
+
+ IN NS www.aaa.com. 
+ IN MX 5 www.aaa.com. 
+www.aaa.com. IN A 10.100.47.61 
+

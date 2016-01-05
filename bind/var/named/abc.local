@@ -1,0 +1,16 @@
+$TTL 86400 
+@ IN SOA aaa.com. root.aaa.com. ( 
+1 ;
+604800 ; 
+86400 ; 
+2419200 ; 
+604800 )
+; 
+
+@ IN NS aaa.com. 
+@ IN NS bbb.com. 
+@ IN NS ccc.com. 
+61 IN PTR dns.aaa.com. 
+62 IN PTR dns.bbb.com. 
+63 IN PTR dns.ccc.com. 
+

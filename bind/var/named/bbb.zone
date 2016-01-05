@@ -1,0 +1,13 @@
+$TTL 86400 
+@ IN SOA  bbb.com.  root.bbb.com. ( 
+10 ; 
+3600 ;
+86400 ;
+2419200 ;
+3600 ) 
+;
+
+ IN NS www.bbb.com. 
+ IN MX 5 www.bbb.com. 
+www.bbb.com. IN A 10.100.47.62
+
