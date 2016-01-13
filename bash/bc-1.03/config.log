@@ -1,0 +1,21 @@
+This file contains any messages produced by compilers while
+running configure, to aid debugging if configure makes a mistake.
+
+configure:535:26: fatal error: minix/config.h: No such file or directory
+ #include <minix/config.h>
+                          ^
+compilation terminated.
+/usr/bin/ld: cannot find -ll
+collect2: error: ld returned 1 exit status
+configure: In function 'main':
+configure:918:67: warning: incompatible implicit declaration of built-in function 'exit'
+ if (XOR (islower (i), ISLOWER (i)) || toupper (i) != TOUPPER (i)) exit(2);
+                                                                   ^
+In file included from configure:1016:0:
+configure: In function 't':
+configure:1027:6: error: expected expression before ')' token
+ char $ac_func(); $ac_func();
+      ^
+configure:1027:17: error: expected expression before ')' token
+ char $ac_func(); $ac_func();
+                 ^
